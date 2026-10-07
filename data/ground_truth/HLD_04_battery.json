@@ -1,0 +1,128 @@
+{
+  "filename": "HLD_04_battery.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "BatteryManager"
+    },
+    {
+      "type": "component",
+      "name": "CellMonitor"
+    },
+    {
+      "type": "component",
+      "name": "ThermalManager"
+    },
+    {
+      "type": "component",
+      "name": "EnergyController"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "interface",
+      "name": "BatteryStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "CellDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "ThermalInterface"
+    },
+    {
+      "type": "interface",
+      "name": "EnergyInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "signal",
+      "name": "StateOfCharge"
+    },
+    {
+      "type": "signal",
+      "name": "CellVoltage"
+    },
+    {
+      "type": "signal",
+      "name": "BatteryTemperature"
+    },
+    {
+      "type": "signal",
+      "name": "PowerLimit"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "BatteryManager",
+      "relation": "uses_interface",
+      "target": "BatteryStatusInterface"
+    },
+    {
+      "source": "CellMonitor",
+      "relation": "uses_interface",
+      "target": "CellDataInterface"
+    },
+    {
+      "source": "ThermalManager",
+      "relation": "uses_interface",
+      "target": "ThermalInterface"
+    },
+    {
+      "source": "EnergyController",
+      "relation": "uses_interface",
+      "target": "EnergyInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "BatteryManager",
+      "relation": "connects_to",
+      "target": "CellMonitor"
+    },
+    {
+      "source": "CellMonitor",
+      "relation": "connects_to",
+      "target": "ThermalManager"
+    },
+    {
+      "source": "ThermalManager",
+      "relation": "connects_to",
+      "target": "EnergyController"
+    },
+    {
+      "source": "EnergyController",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "depends_on",
+      "target": "BatteryManager"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use BatteryStatusInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Battery Management?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to CellMonitor?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": true
+}

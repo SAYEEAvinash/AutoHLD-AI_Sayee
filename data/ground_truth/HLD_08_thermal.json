@@ -1,0 +1,128 @@
+{
+  "filename": "HLD_08_thermal.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "ThermalController"
+    },
+    {
+      "type": "component",
+      "name": "CoolantManager"
+    },
+    {
+      "type": "component",
+      "name": "FanManager"
+    },
+    {
+      "type": "component",
+      "name": "SensorManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "interface",
+      "name": "ThermalStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "CoolantInterface"
+    },
+    {
+      "type": "interface",
+      "name": "FanCommandInterface"
+    },
+    {
+      "type": "interface",
+      "name": "SensorDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "signal",
+      "name": "CoolantTemperature"
+    },
+    {
+      "type": "signal",
+      "name": "FanSpeed"
+    },
+    {
+      "type": "signal",
+      "name": "ThermalState"
+    },
+    {
+      "type": "signal",
+      "name": "SensorStatus"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ThermalController",
+      "relation": "uses_interface",
+      "target": "ThermalStatusInterface"
+    },
+    {
+      "source": "CoolantManager",
+      "relation": "uses_interface",
+      "target": "CoolantInterface"
+    },
+    {
+      "source": "FanManager",
+      "relation": "uses_interface",
+      "target": "FanCommandInterface"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "uses_interface",
+      "target": "SensorDataInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "ThermalController",
+      "relation": "connects_to",
+      "target": "CoolantManager"
+    },
+    {
+      "source": "CoolantManager",
+      "relation": "connects_to",
+      "target": "FanManager"
+    },
+    {
+      "source": "FanManager",
+      "relation": "connects_to",
+      "target": "SensorManager"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "depends_on",
+      "target": "ThermalController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use ThermalStatusInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Thermal Management?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to CoolantManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

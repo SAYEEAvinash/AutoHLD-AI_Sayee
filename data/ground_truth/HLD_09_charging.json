@@ -1,0 +1,128 @@
+{
+  "filename": "HLD_09_charging.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "ChargingController"
+    },
+    {
+      "type": "component",
+      "name": "PlugManager"
+    },
+    {
+      "type": "component",
+      "name": "PowerManager"
+    },
+    {
+      "type": "component",
+      "name": "BatteryManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "interface",
+      "name": "ChargingInterface"
+    },
+    {
+      "type": "interface",
+      "name": "PlugStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "PowerLimitInterface"
+    },
+    {
+      "type": "interface",
+      "name": "BatteryStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "signal",
+      "name": "ChargeCurrent"
+    },
+    {
+      "type": "signal",
+      "name": "PlugState"
+    },
+    {
+      "type": "signal",
+      "name": "PowerLimit"
+    },
+    {
+      "type": "signal",
+      "name": "StateOfCharge"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ChargingController",
+      "relation": "uses_interface",
+      "target": "ChargingInterface"
+    },
+    {
+      "source": "PlugManager",
+      "relation": "uses_interface",
+      "target": "PlugStatusInterface"
+    },
+    {
+      "source": "PowerManager",
+      "relation": "uses_interface",
+      "target": "PowerLimitInterface"
+    },
+    {
+      "source": "BatteryManager",
+      "relation": "uses_interface",
+      "target": "BatteryStatusInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "ChargingController",
+      "relation": "connects_to",
+      "target": "PlugManager"
+    },
+    {
+      "source": "PlugManager",
+      "relation": "connects_to",
+      "target": "PowerManager"
+    },
+    {
+      "source": "PowerManager",
+      "relation": "connects_to",
+      "target": "BatteryManager"
+    },
+    {
+      "source": "BatteryManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "depends_on",
+      "target": "ChargingController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use ChargingInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Charging?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to PlugManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": true
+}

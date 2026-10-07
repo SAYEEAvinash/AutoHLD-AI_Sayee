@@ -1,0 +1,48 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Thermal Management High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Thermal Management contains the following software components:
+Component: ThermalController
+Component: CoolantManager
+Component: FanManager
+Component: SensorManager
+Component: DiagnosticManager
+
+2. Interfaces
+Interface: ThermalStatusInterface
+Interface: CoolantInterface
+Interface: FanCommandInterface
+Interface: SensorDataInterface
+Interface: DiagnosticInterface
+
+3. Signals
+Signal: CoolantTemperature
+Signal: FanSpeed
+Signal: ThermalState
+Signal: SensorStatus
+
+4. Component Responsibilities
+ThermalController uses interface ThermalStatusInterface.
+CoolantManager uses interface CoolantInterface.
+FanManager uses interface FanCommandInterface.
+SensorManager uses interface SensorDataInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+
+5. Communication and Dependencies
+ThermalController connects to CoolantManager.
+CoolantManager connects to FanManager.
+FanManager connects to SensorManager.
+SensorManager connects to DiagnosticManager.
+DiagnosticManager depends on ThermalController.
+
+6. Functional Flow
+ThermalController provides CoolantTemperature to CoolantManager.
+CoolantManager provides FanSpeed to FanManager.
+FanManager provides ThermalState to SensorManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

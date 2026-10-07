@@ -1,0 +1,47 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: ADAS High-Level Design
+Revision: 2.0
+
+1. System Overview
+The ADAS contains the following software components:
+Component: ADASController
+Component: CameraManager
+Component: RadarManager
+Component: ObjectFusionManager
+Component: BrakeController
+
+2. Interfaces
+Interface: CameraDataInterface
+Interface: RadarDataInterface
+Interface: ObjectListInterface
+Interface: ADASCommandInterface
+
+3. Signals
+Signal: ObjectList
+Signal: LaneData
+Signal: RadarTarget
+Signal: ADASCommand
+
+4. Component Responsibilities
+ADASController uses interface CameraDataInterface.
+CameraManager uses interface RadarDataInterface.
+RadarManager uses interface ObjectListInterface.
+ObjectFusionManager uses interface ADASCommandInterface.
+BrakeController uses interface CameraDataInterface.
+
+5. Communication and Dependencies
+ADASController connects to CameraManager.
+CameraManager connects to RadarManager.
+RadarManager connects to ObjectFusionManager.
+ObjectFusionManager connects to BrakeController.
+BrakeController depends on ADASController.
+
+6. Functional Flow
+ADASController provides ObjectList to CameraManager.
+CameraManager provides LaneData to RadarManager.
+RadarManager provides RadarTarget to ObjectFusionManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

@@ -1,0 +1,102 @@
+{
+  "filename": "HLD_10_cluster.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "ClusterManager"
+    },
+    {
+      "type": "component",
+      "name": "DisplayManager"
+    },
+    {
+      "type": "component",
+      "name": "VehicleDataManager"
+    },
+    {
+      "type": "component",
+      "name": "WarningManager"
+    },
+    {
+      "type": "interface",
+      "name": "ClusterDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DisplayInterface"
+    },
+    {
+      "type": "interface",
+      "name": "WarningInterface"
+    },
+    {
+      "type": "signal",
+      "name": "VehicleSpeed"
+    },
+    {
+      "type": "signal",
+      "name": "WarningState"
+    },
+    {
+      "type": "signal",
+      "name": "DisplayFrame"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ClusterManager",
+      "relation": "uses_interface",
+      "target": "ClusterDataInterface"
+    },
+    {
+      "source": "DisplayManager",
+      "relation": "uses_interface",
+      "target": "DisplayInterface"
+    },
+    {
+      "source": "VehicleDataManager",
+      "relation": "uses_interface",
+      "target": "WarningInterface"
+    },
+    {
+      "source": "WarningManager",
+      "relation": "uses_interface",
+      "target": "ClusterDataInterface"
+    },
+    {
+      "source": "ClusterManager",
+      "relation": "connects_to",
+      "target": "DisplayManager"
+    },
+    {
+      "source": "DisplayManager",
+      "relation": "connects_to",
+      "target": "VehicleDataManager"
+    },
+    {
+      "source": "VehicleDataManager",
+      "relation": "connects_to",
+      "target": "WarningManager"
+    },
+    {
+      "source": "WarningManager",
+      "relation": "depends_on",
+      "target": "ClusterManager"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use ClusterDataInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Instrument Cluster?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to DisplayManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

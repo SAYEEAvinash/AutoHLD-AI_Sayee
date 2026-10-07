@@ -1,0 +1,128 @@
+{
+  "filename": "HLD_02_powertrain.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "PowertrainController"
+    },
+    {
+      "type": "component",
+      "name": "EngineManager"
+    },
+    {
+      "type": "component",
+      "name": "TransmissionManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "component",
+      "name": "SensorManager"
+    },
+    {
+      "type": "interface",
+      "name": "PowertrainInterface"
+    },
+    {
+      "type": "interface",
+      "name": "EngineStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "TransmissionInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "interface",
+      "name": "SensorDataInterface"
+    },
+    {
+      "type": "signal",
+      "name": "EngineSpeed"
+    },
+    {
+      "type": "signal",
+      "name": "TorqueRequest"
+    },
+    {
+      "type": "signal",
+      "name": "GearState"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticRequest"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "PowertrainController",
+      "relation": "uses_interface",
+      "target": "PowertrainInterface"
+    },
+    {
+      "source": "EngineManager",
+      "relation": "uses_interface",
+      "target": "EngineStatusInterface"
+    },
+    {
+      "source": "TransmissionManager",
+      "relation": "uses_interface",
+      "target": "TransmissionInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "uses_interface",
+      "target": "SensorDataInterface"
+    },
+    {
+      "source": "PowertrainController",
+      "relation": "connects_to",
+      "target": "EngineManager"
+    },
+    {
+      "source": "EngineManager",
+      "relation": "connects_to",
+      "target": "TransmissionManager"
+    },
+    {
+      "source": "TransmissionManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "connects_to",
+      "target": "SensorManager"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "depends_on",
+      "target": "PowertrainController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use PowertrainInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Powertrain Control?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to EngineManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

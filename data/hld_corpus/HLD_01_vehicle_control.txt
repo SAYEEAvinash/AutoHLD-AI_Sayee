@@ -1,0 +1,55 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Vehicle Control High-Level Design
+Revision: 2.0
+
+1. System Overview
+The Vehicle Control contains the following software components:
+Component: VehicleController
+Component: DiagnosticManager
+Component: CommunicationManager
+Component: BrakeController
+Component: SensorManager
+Component: LoggingManager
+
+2. Interfaces
+Interface: VehicleControlInterface
+Interface: DiagnosticInterface
+Interface: BrakeStatusInterface
+Interface: SensorDataInterface
+Interface: LoggingInterface
+
+3. Signals
+Signal: VehicleSpeed
+Signal: BrakePressure
+Signal: DiagnosticRequest
+Signal: DiagnosticResponse
+Signal: SensorStatus
+
+4. Component Responsibilities
+VehicleController uses interface VehicleControlInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+CommunicationManager uses interface BrakeStatusInterface.
+BrakeController uses interface SensorDataInterface.
+SensorManager uses interface LoggingInterface.
+LoggingManager uses interface VehicleControlInterface.
+
+5. Communication and Dependencies
+VehicleController connects to DiagnosticManager.
+DiagnosticManager connects to CommunicationManager.
+CommunicationManager connects to BrakeController.
+BrakeController connects to SensorManager.
+SensorManager connects to LoggingManager.
+LoggingManager depends on VehicleController.
+
+6. Functional Flow
+VehicleController provides VehicleSpeed to DiagnosticManager.
+DiagnosticManager provides BrakePressure to CommunicationManager.
+CommunicationManager provides DiagnosticRequest to BrakeController.
+
+7. Revision Note
+The architecture note states that VehicleControlInterface was updated to VehicleControlInterfaceV2 in one section. This intentionally creates a terminology inconsistency for evaluation.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

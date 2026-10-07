@@ -1,0 +1,106 @@
+{
+  "filename": "HLD_12_safety_monitor.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "SafetyMonitor"
+    },
+    {
+      "type": "component",
+      "name": "WatchdogManager"
+    },
+    {
+      "type": "component",
+      "name": "HealthManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "interface",
+      "name": "SafetyStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "WatchdogInterface"
+    },
+    {
+      "type": "interface",
+      "name": "HealthInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "signal",
+      "name": "HealthState"
+    },
+    {
+      "type": "signal",
+      "name": "WatchdogStatus"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticRequest"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "SafetyMonitor",
+      "relation": "uses_interface",
+      "target": "SafetyStatusInterface"
+    },
+    {
+      "source": "WatchdogManager",
+      "relation": "uses_interface",
+      "target": "WatchdogInterface"
+    },
+    {
+      "source": "HealthManager",
+      "relation": "uses_interface",
+      "target": "HealthInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "SafetyMonitor",
+      "relation": "connects_to",
+      "target": "WatchdogManager"
+    },
+    {
+      "source": "WatchdogManager",
+      "relation": "connects_to",
+      "target": "HealthManager"
+    },
+    {
+      "source": "HealthManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "depends_on",
+      "target": "SafetyMonitor"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use SafetyStatusInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Safety Monitoring?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to WatchdogManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": true
+}

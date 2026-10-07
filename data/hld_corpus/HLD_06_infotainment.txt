@@ -1,0 +1,47 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Infotainment High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Infotainment contains the following software components:
+Component: InfotainmentManager
+Component: AudioManager
+Component: DisplayManager
+Component: ConnectivityManager
+Component: LoggingManager
+
+2. Interfaces
+Interface: AudioInterface
+Interface: DisplayInterface
+Interface: ConnectivityInterface
+Interface: LoggingInterface
+
+3. Signals
+Signal: VolumeLevel
+Signal: DisplayFrame
+Signal: ConnectionState
+Signal: UserEvent
+
+4. Component Responsibilities
+InfotainmentManager uses interface AudioInterface.
+AudioManager uses interface DisplayInterface.
+DisplayManager uses interface ConnectivityInterface.
+ConnectivityManager uses interface LoggingInterface.
+LoggingManager uses interface AudioInterface.
+
+5. Communication and Dependencies
+InfotainmentManager connects to AudioManager.
+AudioManager connects to DisplayManager.
+DisplayManager connects to ConnectivityManager.
+ConnectivityManager connects to LoggingManager.
+LoggingManager depends on InfotainmentManager.
+
+6. Functional Flow
+InfotainmentManager provides VolumeLevel to AudioManager.
+AudioManager provides DisplayFrame to DisplayManager.
+DisplayManager provides ConnectionState to ConnectivityManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

@@ -1,0 +1,146 @@
+{
+  "filename": "HLD_01_vehicle_control.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "VehicleController"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "component",
+      "name": "CommunicationManager"
+    },
+    {
+      "type": "component",
+      "name": "BrakeController"
+    },
+    {
+      "type": "component",
+      "name": "SensorManager"
+    },
+    {
+      "type": "component",
+      "name": "LoggingManager"
+    },
+    {
+      "type": "interface",
+      "name": "VehicleControlInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "interface",
+      "name": "BrakeStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "SensorDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "LoggingInterface"
+    },
+    {
+      "type": "signal",
+      "name": "VehicleSpeed"
+    },
+    {
+      "type": "signal",
+      "name": "BrakePressure"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticRequest"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticResponse"
+    },
+    {
+      "type": "signal",
+      "name": "SensorStatus"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "VehicleController",
+      "relation": "uses_interface",
+      "target": "VehicleControlInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "CommunicationManager",
+      "relation": "uses_interface",
+      "target": "BrakeStatusInterface"
+    },
+    {
+      "source": "BrakeController",
+      "relation": "uses_interface",
+      "target": "SensorDataInterface"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "uses_interface",
+      "target": "LoggingInterface"
+    },
+    {
+      "source": "LoggingManager",
+      "relation": "uses_interface",
+      "target": "VehicleControlInterface"
+    },
+    {
+      "source": "VehicleController",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "connects_to",
+      "target": "CommunicationManager"
+    },
+    {
+      "source": "CommunicationManager",
+      "relation": "connects_to",
+      "target": "BrakeController"
+    },
+    {
+      "source": "BrakeController",
+      "relation": "connects_to",
+      "target": "SensorManager"
+    },
+    {
+      "source": "SensorManager",
+      "relation": "connects_to",
+      "target": "LoggingManager"
+    },
+    {
+      "source": "LoggingManager",
+      "relation": "depends_on",
+      "target": "VehicleController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use VehicleControlInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Vehicle Control?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to DiagnosticManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": true
+}

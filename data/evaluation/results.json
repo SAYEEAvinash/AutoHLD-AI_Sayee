@@ -1,0 +1,122 @@
+[
+  {
+    "filename": "HLD_01_vehicle_control.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.8,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.888888888888889,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_02_powertrain.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_03_body_control.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_04_battery.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_05_adas.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_06_infotainment.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_07_gateway.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_08_thermal.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_09_charging.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7692307692307693,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8695652173913044,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_10_cluster.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7272727272727273,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8421052631578948,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_11_seat.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7272727272727273,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8421052631578948,
+    "retrieval_hit_at_5": 1.0
+  },
+  {
+    "filename": "HLD_12_safety_monitor.txt",
+    "entity_precision": 1.0,
+    "entity_recall": 1.0,
+    "entity_f1": 1.0,
+    "relationship_precision": 0.7272727272727273,
+    "relationship_recall": 1.0,
+    "relationship_f1": 0.8421052631578948,
+    "retrieval_hit_at_5": 1.0
+  }
+]

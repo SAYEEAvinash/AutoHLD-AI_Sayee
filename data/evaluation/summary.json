@@ -1,0 +1,10 @@
+{
+  "documents": 12,
+  "entity_precision": 1.0,
+  "entity_recall": 1.0,
+  "entity_f1": 1.0,
+  "relationship_precision": 0.7613053613053613,
+  "relationship_recall": 1.0,
+  "relationship_f1": 0.864310534791084,
+  "retrieval_hit_at_5": 1.0
+}

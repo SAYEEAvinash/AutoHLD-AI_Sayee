@@ -1,0 +1,51 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Battery Management High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Battery Management contains the following software components:
+Component: BatteryManager
+Component: CellMonitor
+Component: ThermalManager
+Component: EnergyController
+Component: DiagnosticManager
+
+2. Interfaces
+Interface: BatteryStatusInterface
+Interface: CellDataInterface
+Interface: ThermalInterface
+Interface: EnergyInterface
+Interface: DiagnosticInterface
+
+3. Signals
+Signal: StateOfCharge
+Signal: CellVoltage
+Signal: BatteryTemperature
+Signal: PowerLimit
+
+4. Component Responsibilities
+BatteryManager uses interface BatteryStatusInterface.
+CellMonitor uses interface CellDataInterface.
+ThermalManager uses interface ThermalInterface.
+EnergyController uses interface EnergyInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+
+5. Communication and Dependencies
+BatteryManager connects to CellMonitor.
+CellMonitor connects to ThermalManager.
+ThermalManager connects to EnergyController.
+EnergyController connects to DiagnosticManager.
+DiagnosticManager depends on BatteryManager.
+
+6. Functional Flow
+BatteryManager provides StateOfCharge to CellMonitor.
+CellMonitor provides CellVoltage to ThermalManager.
+ThermalManager provides BatteryTemperature to EnergyController.
+
+7. Revision Note
+The architecture note states that BatteryStatusInterface was updated to BatteryStateInterface in one section. This intentionally creates a terminology inconsistency for evaluation.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

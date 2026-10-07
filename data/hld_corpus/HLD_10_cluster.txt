@@ -1,0 +1,42 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Instrument Cluster High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Instrument Cluster contains the following software components:
+Component: ClusterManager
+Component: DisplayManager
+Component: VehicleDataManager
+Component: WarningManager
+
+2. Interfaces
+Interface: ClusterDataInterface
+Interface: DisplayInterface
+Interface: WarningInterface
+
+3. Signals
+Signal: VehicleSpeed
+Signal: WarningState
+Signal: DisplayFrame
+
+4. Component Responsibilities
+ClusterManager uses interface ClusterDataInterface.
+DisplayManager uses interface DisplayInterface.
+VehicleDataManager uses interface WarningInterface.
+WarningManager uses interface ClusterDataInterface.
+
+5. Communication and Dependencies
+ClusterManager connects to DisplayManager.
+DisplayManager connects to VehicleDataManager.
+VehicleDataManager connects to WarningManager.
+WarningManager depends on ClusterManager.
+
+6. Functional Flow
+ClusterManager provides VehicleSpeed to DisplayManager.
+DisplayManager provides WarningState to VehicleDataManager.
+VehicleDataManager provides DisplayFrame to WarningManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

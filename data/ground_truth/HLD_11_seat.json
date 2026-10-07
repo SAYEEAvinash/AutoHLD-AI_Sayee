@@ -1,0 +1,106 @@
+{
+  "filename": "HLD_11_seat.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "SeatController"
+    },
+    {
+      "type": "component",
+      "name": "MotorManager"
+    },
+    {
+      "type": "component",
+      "name": "MemoryManager"
+    },
+    {
+      "type": "component",
+      "name": "UserProfileManager"
+    },
+    {
+      "type": "interface",
+      "name": "SeatControlInterface"
+    },
+    {
+      "type": "interface",
+      "name": "MotorStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "MemoryInterface"
+    },
+    {
+      "type": "interface",
+      "name": "UserProfileInterface"
+    },
+    {
+      "type": "signal",
+      "name": "SeatPosition"
+    },
+    {
+      "type": "signal",
+      "name": "MotorCurrent"
+    },
+    {
+      "type": "signal",
+      "name": "ProfileId"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "SeatController",
+      "relation": "uses_interface",
+      "target": "SeatControlInterface"
+    },
+    {
+      "source": "MotorManager",
+      "relation": "uses_interface",
+      "target": "MotorStatusInterface"
+    },
+    {
+      "source": "MemoryManager",
+      "relation": "uses_interface",
+      "target": "MemoryInterface"
+    },
+    {
+      "source": "UserProfileManager",
+      "relation": "uses_interface",
+      "target": "UserProfileInterface"
+    },
+    {
+      "source": "SeatController",
+      "relation": "connects_to",
+      "target": "MotorManager"
+    },
+    {
+      "source": "MotorManager",
+      "relation": "connects_to",
+      "target": "MemoryManager"
+    },
+    {
+      "source": "MemoryManager",
+      "relation": "connects_to",
+      "target": "UserProfileManager"
+    },
+    {
+      "source": "UserProfileManager",
+      "relation": "depends_on",
+      "target": "SeatController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use SeatControlInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Seat Control?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to MotorManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

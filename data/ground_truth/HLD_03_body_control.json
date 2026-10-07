@@ -1,0 +1,128 @@
+{
+  "filename": "HLD_03_body_control.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "BodyController"
+    },
+    {
+      "type": "component",
+      "name": "DoorManager"
+    },
+    {
+      "type": "component",
+      "name": "LightingManager"
+    },
+    {
+      "type": "component",
+      "name": "ClimateManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "interface",
+      "name": "BodyControlInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DoorStatusInterface"
+    },
+    {
+      "type": "interface",
+      "name": "LightingInterface"
+    },
+    {
+      "type": "interface",
+      "name": "ClimateInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "signal",
+      "name": "DoorState"
+    },
+    {
+      "type": "signal",
+      "name": "LightCommand"
+    },
+    {
+      "type": "signal",
+      "name": "CabinTemperature"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticRequest"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "BodyController",
+      "relation": "uses_interface",
+      "target": "BodyControlInterface"
+    },
+    {
+      "source": "DoorManager",
+      "relation": "uses_interface",
+      "target": "DoorStatusInterface"
+    },
+    {
+      "source": "LightingManager",
+      "relation": "uses_interface",
+      "target": "LightingInterface"
+    },
+    {
+      "source": "ClimateManager",
+      "relation": "uses_interface",
+      "target": "ClimateInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "BodyController",
+      "relation": "connects_to",
+      "target": "DoorManager"
+    },
+    {
+      "source": "DoorManager",
+      "relation": "connects_to",
+      "target": "LightingManager"
+    },
+    {
+      "source": "LightingManager",
+      "relation": "connects_to",
+      "target": "ClimateManager"
+    },
+    {
+      "source": "ClimateManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "depends_on",
+      "target": "BodyController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use BodyControlInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Body Control?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to DoorManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

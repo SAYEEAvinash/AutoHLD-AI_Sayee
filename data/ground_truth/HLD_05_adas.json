@@ -1,0 +1,124 @@
+{
+  "filename": "HLD_05_adas.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "ADASController"
+    },
+    {
+      "type": "component",
+      "name": "CameraManager"
+    },
+    {
+      "type": "component",
+      "name": "RadarManager"
+    },
+    {
+      "type": "component",
+      "name": "ObjectFusionManager"
+    },
+    {
+      "type": "component",
+      "name": "BrakeController"
+    },
+    {
+      "type": "interface",
+      "name": "CameraDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "RadarDataInterface"
+    },
+    {
+      "type": "interface",
+      "name": "ObjectListInterface"
+    },
+    {
+      "type": "interface",
+      "name": "ADASCommandInterface"
+    },
+    {
+      "type": "signal",
+      "name": "ObjectList"
+    },
+    {
+      "type": "signal",
+      "name": "LaneData"
+    },
+    {
+      "type": "signal",
+      "name": "RadarTarget"
+    },
+    {
+      "type": "signal",
+      "name": "ADASCommand"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ADASController",
+      "relation": "uses_interface",
+      "target": "CameraDataInterface"
+    },
+    {
+      "source": "CameraManager",
+      "relation": "uses_interface",
+      "target": "RadarDataInterface"
+    },
+    {
+      "source": "RadarManager",
+      "relation": "uses_interface",
+      "target": "ObjectListInterface"
+    },
+    {
+      "source": "ObjectFusionManager",
+      "relation": "uses_interface",
+      "target": "ADASCommandInterface"
+    },
+    {
+      "source": "BrakeController",
+      "relation": "uses_interface",
+      "target": "CameraDataInterface"
+    },
+    {
+      "source": "ADASController",
+      "relation": "connects_to",
+      "target": "CameraManager"
+    },
+    {
+      "source": "CameraManager",
+      "relation": "connects_to",
+      "target": "RadarManager"
+    },
+    {
+      "source": "RadarManager",
+      "relation": "connects_to",
+      "target": "ObjectFusionManager"
+    },
+    {
+      "source": "ObjectFusionManager",
+      "relation": "connects_to",
+      "target": "BrakeController"
+    },
+    {
+      "source": "BrakeController",
+      "relation": "depends_on",
+      "target": "ADASController"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use CameraDataInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the ADAS?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to CameraManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

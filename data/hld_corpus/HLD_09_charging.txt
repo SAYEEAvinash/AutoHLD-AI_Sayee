@@ -1,0 +1,51 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Charging High-Level Design
+Revision: 2.0
+
+1. System Overview
+The Charging contains the following software components:
+Component: ChargingController
+Component: PlugManager
+Component: PowerManager
+Component: BatteryManager
+Component: DiagnosticManager
+
+2. Interfaces
+Interface: ChargingInterface
+Interface: PlugStatusInterface
+Interface: PowerLimitInterface
+Interface: BatteryStatusInterface
+Interface: DiagnosticInterface
+
+3. Signals
+Signal: ChargeCurrent
+Signal: PlugState
+Signal: PowerLimit
+Signal: StateOfCharge
+
+4. Component Responsibilities
+ChargingController uses interface ChargingInterface.
+PlugManager uses interface PlugStatusInterface.
+PowerManager uses interface PowerLimitInterface.
+BatteryManager uses interface BatteryStatusInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+
+5. Communication and Dependencies
+ChargingController connects to PlugManager.
+PlugManager connects to PowerManager.
+PowerManager connects to BatteryManager.
+BatteryManager connects to DiagnosticManager.
+DiagnosticManager depends on ChargingController.
+
+6. Functional Flow
+ChargingController provides ChargeCurrent to PlugManager.
+PlugManager provides PlugState to PowerManager.
+PowerManager provides PowerLimit to BatteryManager.
+
+7. Revision Note
+The architecture note states that ChargingInterface was updated to ChargingInterfaceV2 in one section. This intentionally creates a terminology inconsistency for evaluation.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

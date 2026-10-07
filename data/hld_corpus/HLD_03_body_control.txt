@@ -1,0 +1,48 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Body Control High-Level Design
+Revision: 2.0
+
+1. System Overview
+The Body Control contains the following software components:
+Component: BodyController
+Component: DoorManager
+Component: LightingManager
+Component: ClimateManager
+Component: DiagnosticManager
+
+2. Interfaces
+Interface: BodyControlInterface
+Interface: DoorStatusInterface
+Interface: LightingInterface
+Interface: ClimateInterface
+Interface: DiagnosticInterface
+
+3. Signals
+Signal: DoorState
+Signal: LightCommand
+Signal: CabinTemperature
+Signal: DiagnosticRequest
+
+4. Component Responsibilities
+BodyController uses interface BodyControlInterface.
+DoorManager uses interface DoorStatusInterface.
+LightingManager uses interface LightingInterface.
+ClimateManager uses interface ClimateInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+
+5. Communication and Dependencies
+BodyController connects to DoorManager.
+DoorManager connects to LightingManager.
+LightingManager connects to ClimateManager.
+ClimateManager connects to DiagnosticManager.
+DiagnosticManager depends on BodyController.
+
+6. Functional Flow
+BodyController provides DoorState to DoorManager.
+DoorManager provides LightCommand to LightingManager.
+LightingManager provides CabinTemperature to ClimateManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

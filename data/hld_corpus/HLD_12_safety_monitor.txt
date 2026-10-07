@@ -1,0 +1,46 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Safety Monitoring High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Safety Monitoring contains the following software components:
+Component: SafetyMonitor
+Component: WatchdogManager
+Component: HealthManager
+Component: DiagnosticManager
+
+2. Interfaces
+Interface: SafetyStatusInterface
+Interface: WatchdogInterface
+Interface: HealthInterface
+Interface: DiagnosticInterface
+
+3. Signals
+Signal: HealthState
+Signal: WatchdogStatus
+Signal: DiagnosticRequest
+
+4. Component Responsibilities
+SafetyMonitor uses interface SafetyStatusInterface.
+WatchdogManager uses interface WatchdogInterface.
+HealthManager uses interface HealthInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+
+5. Communication and Dependencies
+SafetyMonitor connects to WatchdogManager.
+WatchdogManager connects to HealthManager.
+HealthManager connects to DiagnosticManager.
+DiagnosticManager depends on SafetyMonitor.
+
+6. Functional Flow
+SafetyMonitor provides HealthState to WatchdogManager.
+WatchdogManager provides WatchdogStatus to HealthManager.
+HealthManager provides DiagnosticRequest to DiagnosticManager.
+
+7. Revision Note
+The architecture note states that SafetyStatusInterface was updated to SafetyStateInterface in one section. This intentionally creates a terminology inconsistency for evaluation.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

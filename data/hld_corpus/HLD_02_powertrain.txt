@@ -1,0 +1,48 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Powertrain Control High-Level Design
+Revision: 1.0
+
+1. System Overview
+The Powertrain Control contains the following software components:
+Component: PowertrainController
+Component: EngineManager
+Component: TransmissionManager
+Component: DiagnosticManager
+Component: SensorManager
+
+2. Interfaces
+Interface: PowertrainInterface
+Interface: EngineStatusInterface
+Interface: TransmissionInterface
+Interface: DiagnosticInterface
+Interface: SensorDataInterface
+
+3. Signals
+Signal: EngineSpeed
+Signal: TorqueRequest
+Signal: GearState
+Signal: DiagnosticRequest
+
+4. Component Responsibilities
+PowertrainController uses interface PowertrainInterface.
+EngineManager uses interface EngineStatusInterface.
+TransmissionManager uses interface TransmissionInterface.
+DiagnosticManager uses interface DiagnosticInterface.
+SensorManager uses interface SensorDataInterface.
+
+5. Communication and Dependencies
+PowertrainController connects to EngineManager.
+EngineManager connects to TransmissionManager.
+TransmissionManager connects to DiagnosticManager.
+DiagnosticManager connects to SensorManager.
+SensorManager depends on PowertrainController.
+
+6. Functional Flow
+PowertrainController provides EngineSpeed to EngineManager.
+EngineManager provides TorqueRequest to TransmissionManager.
+TransmissionManager provides GearState to DiagnosticManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

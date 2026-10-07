@@ -1,0 +1,43 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Seat Control High-Level Design
+Revision: 2.0
+
+1. System Overview
+The Seat Control contains the following software components:
+Component: SeatController
+Component: MotorManager
+Component: MemoryManager
+Component: UserProfileManager
+
+2. Interfaces
+Interface: SeatControlInterface
+Interface: MotorStatusInterface
+Interface: MemoryInterface
+Interface: UserProfileInterface
+
+3. Signals
+Signal: SeatPosition
+Signal: MotorCurrent
+Signal: ProfileId
+
+4. Component Responsibilities
+SeatController uses interface SeatControlInterface.
+MotorManager uses interface MotorStatusInterface.
+MemoryManager uses interface MemoryInterface.
+UserProfileManager uses interface UserProfileInterface.
+
+5. Communication and Dependencies
+SeatController connects to MotorManager.
+MotorManager connects to MemoryManager.
+MemoryManager connects to UserProfileManager.
+UserProfileManager depends on SeatController.
+
+6. Functional Flow
+SeatController provides SeatPosition to MotorManager.
+MotorManager provides MotorCurrent to MemoryManager.
+MemoryManager provides ProfileId to UserProfileManager.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.

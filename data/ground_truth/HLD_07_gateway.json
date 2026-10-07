@@ -1,0 +1,124 @@
+{
+  "filename": "HLD_07_gateway.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "GatewayManager"
+    },
+    {
+      "type": "component",
+      "name": "CANManager"
+    },
+    {
+      "type": "component",
+      "name": "EthernetManager"
+    },
+    {
+      "type": "component",
+      "name": "DiagnosticManager"
+    },
+    {
+      "type": "component",
+      "name": "SecurityManager"
+    },
+    {
+      "type": "interface",
+      "name": "CANGatewayInterface"
+    },
+    {
+      "type": "interface",
+      "name": "EthernetGatewayInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DiagnosticInterface"
+    },
+    {
+      "type": "interface",
+      "name": "SecurityInterface"
+    },
+    {
+      "type": "signal",
+      "name": "CANFrame"
+    },
+    {
+      "type": "signal",
+      "name": "EthernetPacket"
+    },
+    {
+      "type": "signal",
+      "name": "DiagnosticRequest"
+    },
+    {
+      "type": "signal",
+      "name": "SecurityEvent"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "GatewayManager",
+      "relation": "uses_interface",
+      "target": "CANGatewayInterface"
+    },
+    {
+      "source": "CANManager",
+      "relation": "uses_interface",
+      "target": "EthernetGatewayInterface"
+    },
+    {
+      "source": "EthernetManager",
+      "relation": "uses_interface",
+      "target": "DiagnosticInterface"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "uses_interface",
+      "target": "SecurityInterface"
+    },
+    {
+      "source": "SecurityManager",
+      "relation": "uses_interface",
+      "target": "CANGatewayInterface"
+    },
+    {
+      "source": "GatewayManager",
+      "relation": "connects_to",
+      "target": "CANManager"
+    },
+    {
+      "source": "CANManager",
+      "relation": "connects_to",
+      "target": "EthernetManager"
+    },
+    {
+      "source": "EthernetManager",
+      "relation": "connects_to",
+      "target": "DiagnosticManager"
+    },
+    {
+      "source": "DiagnosticManager",
+      "relation": "connects_to",
+      "target": "SecurityManager"
+    },
+    {
+      "source": "SecurityManager",
+      "relation": "depends_on",
+      "target": "GatewayManager"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use CANGatewayInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Vehicle Gateway?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to CANManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": true
+}

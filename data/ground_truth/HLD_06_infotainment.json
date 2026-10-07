@@ -1,0 +1,124 @@
+{
+  "filename": "HLD_06_infotainment.txt",
+  "entities": [
+    {
+      "type": "component",
+      "name": "InfotainmentManager"
+    },
+    {
+      "type": "component",
+      "name": "AudioManager"
+    },
+    {
+      "type": "component",
+      "name": "DisplayManager"
+    },
+    {
+      "type": "component",
+      "name": "ConnectivityManager"
+    },
+    {
+      "type": "component",
+      "name": "LoggingManager"
+    },
+    {
+      "type": "interface",
+      "name": "AudioInterface"
+    },
+    {
+      "type": "interface",
+      "name": "DisplayInterface"
+    },
+    {
+      "type": "interface",
+      "name": "ConnectivityInterface"
+    },
+    {
+      "type": "interface",
+      "name": "LoggingInterface"
+    },
+    {
+      "type": "signal",
+      "name": "VolumeLevel"
+    },
+    {
+      "type": "signal",
+      "name": "DisplayFrame"
+    },
+    {
+      "type": "signal",
+      "name": "ConnectionState"
+    },
+    {
+      "type": "signal",
+      "name": "UserEvent"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "InfotainmentManager",
+      "relation": "uses_interface",
+      "target": "AudioInterface"
+    },
+    {
+      "source": "AudioManager",
+      "relation": "uses_interface",
+      "target": "DisplayInterface"
+    },
+    {
+      "source": "DisplayManager",
+      "relation": "uses_interface",
+      "target": "ConnectivityInterface"
+    },
+    {
+      "source": "ConnectivityManager",
+      "relation": "uses_interface",
+      "target": "LoggingInterface"
+    },
+    {
+      "source": "LoggingManager",
+      "relation": "uses_interface",
+      "target": "AudioInterface"
+    },
+    {
+      "source": "InfotainmentManager",
+      "relation": "connects_to",
+      "target": "AudioManager"
+    },
+    {
+      "source": "AudioManager",
+      "relation": "connects_to",
+      "target": "DisplayManager"
+    },
+    {
+      "source": "DisplayManager",
+      "relation": "connects_to",
+      "target": "ConnectivityManager"
+    },
+    {
+      "source": "ConnectivityManager",
+      "relation": "connects_to",
+      "target": "LoggingManager"
+    },
+    {
+      "source": "LoggingManager",
+      "relation": "depends_on",
+      "target": "InfotainmentManager"
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which components use AudioInterface?",
+      "gold_page": 1
+    },
+    {
+      "question": "What signals are defined in the Infotainment?",
+      "gold_page": 1
+    },
+    {
+      "question": "Which component connects to AudioManager?",
+      "gold_page": 1
+    }
+  ],
+  "known_issue": false
+}

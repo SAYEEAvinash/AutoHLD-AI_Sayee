@@ -1,0 +1,50 @@
+SYNTHETIC AUTOSAR-STYLE HLD — ACADEMIC DATASET
+Not an official AUTOSAR or OEM specification.
+
+Document: Vehicle Gateway High-Level Design
+Revision: 2.0
+
+1. System Overview
+The Vehicle Gateway contains the following software components:
+Component: GatewayManager
+Component: CANManager
+Component: EthernetManager
+Component: DiagnosticManager
+Component: SecurityManager
+
+2. Interfaces
+Interface: CANGatewayInterface
+Interface: EthernetGatewayInterface
+Interface: DiagnosticInterface
+Interface: SecurityInterface
+
+3. Signals
+Signal: CANFrame
+Signal: EthernetPacket
+Signal: DiagnosticRequest
+Signal: SecurityEvent
+
+4. Component Responsibilities
+GatewayManager uses interface CANGatewayInterface.
+CANManager uses interface EthernetGatewayInterface.
+EthernetManager uses interface DiagnosticInterface.
+DiagnosticManager uses interface SecurityInterface.
+SecurityManager uses interface CANGatewayInterface.
+
+5. Communication and Dependencies
+GatewayManager connects to CANManager.
+CANManager connects to EthernetManager.
+EthernetManager connects to DiagnosticManager.
+DiagnosticManager connects to SecurityManager.
+SecurityManager depends on GatewayManager.
+
+6. Functional Flow
+GatewayManager provides CANFrame to CANManager.
+CANManager provides EthernetPacket to EthernetManager.
+EthernetManager provides DiagnosticRequest to DiagnosticManager.
+
+7. Revision Note
+The architecture note states that CANGatewayInterface was updated to CANGatewayInterfaceV2 in one section. This intentionally creates a terminology inconsistency for evaluation.
+
+8. Governance
+AI-generated findings require qualified human review before consequential engineering use.
